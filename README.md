@@ -141,7 +141,7 @@ from oddsharvester_tennis_live import LiveTennisClient, enrich_from_api
 
 client = LiveTennisClient("your-free-key")
 records = [...]  # OddsHarvester tennis rows
-stats = enrich_from_api(records, client)   # records mutated in place
+stats = enrich_from_api(records, client)  # records mutated in place
 print(stats)  # {"total": N, "matched": M, "unmatched": N-M}
 ```
 
