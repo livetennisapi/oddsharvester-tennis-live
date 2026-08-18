@@ -1,0 +1,79 @@
+[project]
+name = "oddsharvester-tennis-live"
+version = "0.1.0"
+description = "Live-tennis STATE companion for OddsHarvester — enrich scraped OddsPortal tennis rows with live scores, serving and break-point state from the Live Tennis API. No odds."
+authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+keywords = [
+    "tennis",
+    "live-scores",
+    "oddsharvester",
+    "oddsportal",
+    "sports-data",
+    "atp",
+    "wta",
+    "break-point",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+dependencies = [
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0",
+    "ruff>=0.6.0",
+]
+
+[project.scripts]
+oddsharvester-tennis-live = "oddsharvester_tennis_live.cli:main"
+
+[project.urls]
+Homepage = "https://livetennisapi.com"
+Documentation = "https://docs.livetennisapi.com"
+Repository = "https://github.com/livetennisapi/oddsharvester-tennis-live"
+Issues = "https://github.com/livetennisapi/oddsharvester-tennis-live/issues"
+"OddsHarvester" = "https://github.com/jordantete/OddsHarvester"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["src/oddsharvester_tennis_live", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP", "N", "S", "SIM", "RUF", "PT", "Q"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106", "PT011"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint.isort]
+known-first-party = ["oddsharvester_tennis_live"]
+force-sort-within-sections = true
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
