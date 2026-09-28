@@ -2,7 +2,7 @@
 name = "oddsharvester-tennis-live"
 version = "0.1.0"
 description = "Live-tennis STATE companion for OddsHarvester — enrich scraped OddsPortal tennis rows with live scores, serving and break-point state from the Live Tennis API. No odds."
-authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+authors = [{ name = "Synapse Research Ltd", email = "hello@livetennisapi.com" }]
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
@@ -45,6 +45,7 @@ Documentation = "https://docs.livetennisapi.com"
 Repository = "https://github.com/livetennisapi/oddsharvester-tennis-live"
 Issues = "https://github.com/livetennisapi/oddsharvester-tennis-live/issues"
 "OddsHarvester" = "https://github.com/jordantete/OddsHarvester"
+Author = "https://synapsereality.io"
 
 [tool.pytest.ini_options]
 pythonpath = "src"
